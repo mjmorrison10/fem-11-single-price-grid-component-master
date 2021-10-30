@@ -1,0 +1,222 @@
+:root {
+  --grayishBlue: var(--grayishBlue-hue) var(--grayishBlue-sat)
+    var(--grayishBlue-light);
+  --grayishBlue-hue: 218;
+  --grayishBlue-sat: 22%;
+  --grayishBlue-light: 67%;
+
+  --cyan: var(--cyan-hue) var(--cyan-sat) var(--cyan-light);
+  --cyan-hue: 179;
+  --cyan-sat: 62%;
+  --cyan-light: 43%;
+
+  --brightYellow: var(--brightYellow-hue) var(--brightYellow-sat)
+    var(--brightYellow-light);
+  --brightYellow-hue: 71;
+  --brightYellow-sat: 73%;
+  --brightYellow-light: 54%;
+
+  --lightGray: var(--lightGray-hue) var(--lightGray-sat) var(--lightGray-light);
+  --lightGray-hue: 204;
+  --lightGray-sat: 43%;
+  --lightGray-light: 93%;
+
+  --borderRadius: 8px;
+
+  --fontWeightNormal: 400;
+  --fontWeightBold: 700;
+
+  font-family: "Karla", sans-serif;
+
+  font-size: 16px;
+
+  --fontSize4XSmall: 0.5em;
+  --fontSize3XSmall: 0.6em;
+  --fontSize2XSmall: 0.7em;
+  --fontSizeXSmall: 0.75rem;
+  --fontSizeSmall: 0.8em;
+  --fontSizeMedium: 1em;
+  --fontSizeLarge: 1.2em;
+  --fontSizeXLarge: 1.5em;
+  --fontSize2XLarge: 2em;
+  --fontSize3XLarge: 2.5em;
+  --fontSize4XLarge: 3em;
+  --fontSize5XLarge: 3.5em;
+  --fontSize6XLarge: 4em;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  overflow: scroll;
+  overflow-x: hidden;
+}
+::-webkit-scrollbar {
+  width: 0; /* Remove scrollbar space */
+  background: transparent; /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+  background: #ff0000;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: hsl(var(--lightGray));
+}
+
+main {
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.component {
+  background-color: white;
+  width: fit-content;
+  height: fit-content;
+  /* padding: 2rem; */
+  border-radius: var(--borderRadius);
+  overflow: hidden;
+  -webkit-box-shadow: 0px 10px 20px 5px hsl(var(--grayishBlue));
+  box-shadow: 0px 10px 20px 5px hsl(var(--grayishBlue));
+}
+
+.top-wrapper {
+  padding: 2rem;
+  padding-right: 4rem;
+}
+
+.top-wrapper h1 {
+  color: hsl(var(--cyan));
+  margin-bottom: 1rem;
+  font-size: var(--fontSizeXLarge);
+  font-weight: var(--fontWeightBold);
+}
+
+.top-wrapper h2 {
+  color: hsl(var(--brightYellow));
+  margin: 0.5rem 0;
+  font-size: var(--fontSizeLarge);
+  font-weight: var(--fontWeightBold);
+}
+
+.top-wrapper p {
+  color: hsl(var(--grayishBlue));
+  line-height: 1.25;
+  font-size: var(--fontSizeMedium);
+  font-weight: var(--fontWeightNormal);
+}
+
+.bottom-wrapper {
+  display: flex;
+}
+
+.left-wrapper {
+  padding: 2rem;
+  flex: 1;
+  background-color: hsl(var(--cyan));
+}
+
+.left-wrapper h1 {
+  color: white;
+  font-size: var(--fontSizeLarge);
+  font-weight: var(--fontWeightBold);
+}
+
+.left-wrapper h2 {
+  color: hsl(var(--lightGray));
+  font-size: var(--fontSizeMedium);
+  font-weight: var(--fontWeightNormal);
+  margin: 0.5rem 0;
+}
+
+.left-wrapper span {
+  color: white;
+  font-size: var(--fontSize2XLarge);
+  font-weight: var(--fontWeightBold);
+  margin-right: 0.5rem;
+}
+
+.left-wrapper p {
+  color: white;
+  font-size: var(--fontSizeMedium);
+  font-weight: var(--fontWeightNormal);
+  margin-bottom: 2rem;
+}
+
+.left-wrapper button {
+  width: 100%;
+  color: white;
+  padding: 1rem;
+  background-color: hsl(var(--brightYellow));
+  border: none;
+  border-radius: calc(var(--borderRadius) / 2);
+  font-weight: var(--fontWeightBold);
+  -webkit-box-shadow: 0px 10px 20px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 10px 20px 5px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: 250ms ease-in-out;
+}
+
+.left-wrapper button:hover {
+  --brightYellow-light: 44%;
+  background-color: hsl(
+    var(--brightYellow-hue),
+    var(--brightYellow-sat),
+    var(--brightYellow-light)
+  );
+}
+
+.right-wrapper {
+  flex: 1;
+  padding: 2rem;
+  --cyan-light: 53%;
+  --cyan-sat: 52%;
+  background-color: hsl(var(--cyan-hue), var(--cyan-sat), var(--cyan-light));
+}
+
+.right-wrapper h1 {
+  color: white;
+  font-size: var(--fontSizeLarge);
+  font-weight: var(--fontWeightBold);
+  margin-bottom: 1rem;
+}
+
+.right-wrapper p {
+  color: hsl(var(--lightGray));
+  font-size: var(--fontSizeMedium);
+  line-height: 1.25;
+}
+
+footer {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media (max-width: 450px) {
+  .component {
+      margin: 4rem 0;
+    width: 90%;
+  }
+  .bottom-wrapper {
+    flex-direction: column;
+  }
+}
